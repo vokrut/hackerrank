@@ -40,6 +40,17 @@ public class Poet {
             int currentPosition = getCurrentPosition(readyElements + 1, positionCenter);
             int currentMinPosition = currentPosition;
 
+            for (int i = 0; i < minPosition; i++) {
+            	if (result[currentMinPosition] > result[i]) {
+                    currentMinPosition = i;
+                }
+            }
+            for (int i = maxPosition + 1; i < result.length; i++) {
+            	if (result[currentMinPosition] > result[i]) {
+                    currentMinPosition = i;
+                }
+            }
+            /*
             for (int i = 0; i < result.length; i++) {
                 if (readyElements > 0) {
                     if (i >= minPosition && i <= maxPosition) {
@@ -50,6 +61,7 @@ public class Poet {
                     currentMinPosition = i;
                 }
             }
+            */
 
             if (currentMinPosition != currentPosition) {
                 int tempValue = result[currentMinPosition];
